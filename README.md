@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Law Pavillion Test Project
 
 ## Getting Started
 
@@ -13,6 +13,30 @@ pnpm dev
 # or
 bun dev
 ```
+
+## Login Credentials
+
+```
+email : emeka@yopmail.com
+password : P@ssword123
+```
+
+## Packages
+
+- Next 15
+- RTK Query
+- Redux Persist
+- Emydev Library
+- React Haiku
+- ShadCN UI
+- Tailwind
+- Formik, Yup
+- JS Cookie
+- Rechart
+
+## Authentication
+
+The authentication flow implemented caters for JWT Auth with session . Primary storage used was localstorage (can also use session storage if required). Token and Refresh token are store on the Next Header and Browser cookies
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
