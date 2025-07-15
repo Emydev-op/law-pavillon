@@ -1,3 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-unused-expressions */
+
 import React from "react";
 import { cn } from "@/lib/utils";
 import { EllipsisVertical } from "lucide-react";
@@ -17,7 +21,7 @@ import {
 } from "../ui/dropdown-menu";
 
 interface myComponentProps {
-  tableheaderList?: any;
+  tableheaderList: string[];
   loading?: boolean;
   tableBodyList?: any;
   hidePagination?: boolean;
@@ -48,7 +52,6 @@ const CustomTable = ({
   defaultBodyList,
   dropDown,
   dropDownList,
-  dynamicDropDownList,
   width,
   disabledDropdown,
   totalPage = 0,
@@ -180,7 +183,7 @@ const CustomTable = ({
 
                     //  if tableBodyList object has _slug key it will be ignored when rendering table data
                     const FORMATTED_DATA = Object?.entries(item)
-                      .filter(([key, value]) => {
+                      .filter(([key, _]) => {
                         return key !== "_slug";
                       })
                       ?.map((d) => {

@@ -14,7 +14,6 @@ export default function Overview() {
         <MetricCard
           title={"total profit"}
           value={"N10,000.00"}
-          icon="sell"
           transactions="100 Transactions"
         />
         <MetricCard title={"Total Customers"} value={"400"} transactions=" " />

@@ -13,7 +13,6 @@ interface FilterProp {
   hasRefresh?: boolean;
   hasDateRange?: boolean;
   hasExport?: boolean;
-  hasExportPlus?: boolean;
   exportText?: string;
   onRrefresh?: () => void;
   onSearch?: (val: string) => void;
@@ -31,7 +30,6 @@ export default function FilterBarInput({
   hasRefresh,
   onExport,
   onSearch,
-  hasExportPlus,
 }: FilterProp) {
   const [value, setValue] = useState("");
   const debouncedValue = useDebounce(value, 1000);
@@ -39,8 +37,10 @@ export default function FilterBarInput({
 
   // Handle Change After Debounce
   useEffect(() => {
-    onSearch && onSearch(debouncedValue);
-  }, [debouncedValue]);
+    if (onSearch) {
+      onSearch(debouncedValue);
+    }
+  }, [debouncedValue, onSearch]);
 
   return (
     <section
@@ -57,7 +57,7 @@ export default function FilterBarInput({
             type="button"
             variant={"outline"}
             onClick={() => {
-              onRrefresh && onRrefresh();
+              if (onRrefresh) onRrefresh();
             }}
             className="h-[34px] px-2.5 py-2 text-xs text-black-02 rounded-[3px] shadow-none"
           >
@@ -92,7 +92,7 @@ export default function FilterBarInput({
             variant={"default"}
             className="h-8 rounded-[5px] text-xs gap-1.5"
             onClick={() => {
-              onExport && onExport();
+              if (onExport) onExport();
             }}
           >
             {exportText ? exportText : "Export"}

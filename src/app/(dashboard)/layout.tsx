@@ -1,6 +1,6 @@
 import { AppSidebar } from "@/components/custom/app-sidebar";
 import HeaderNav from "@/components/custom/header-nav";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { SidebarProvider } from "@/components/ui/sidebar";
 import Authenticated from "@/middleware/authenticated";
 import { cookies } from "next/headers";
 

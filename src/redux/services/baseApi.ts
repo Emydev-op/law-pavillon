@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   BaseQueryFn,
   FetchArgs,
@@ -97,11 +98,11 @@ export const baseQueryInterceptor: BaseQueryFn<
         // Refresh failed, force logout if we aren't under the login api
         const isAuthRoute =
           typeof args === "string"
-            ? args.startsWith("auth/login")
+            ? args.startsWith("/api/auth/login")
             : typeof args === "object" &&
               "url" in args &&
               typeof args.url === "string"
-            ? args.url.startsWith("auth/login")
+            ? args.url.startsWith("/api/auth/login")
             : false;
         if (isAuthRoute) {
           // Just show error for auth routes

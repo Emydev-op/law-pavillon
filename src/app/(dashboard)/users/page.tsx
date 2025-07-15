@@ -40,7 +40,7 @@ export default function ActivityLog() {
             {
               label: "View Details",
               color: "",
-              onActionClick: (param: any) => {},
+              onActionClick: () => {},
             },
           ]}
         />
@@ -49,8 +49,8 @@ export default function ActivityLog() {
   );
 }
 
-const FORMAT_TABLE_DATA = (obj: any) => {
-  return obj?.map((org: any) => ({
+const FORMAT_TABLE_DATA = (obj: typeof dummyData) => {
+  return obj?.map((org) => ({
     date: (
       <span>
         <span className="text-[10px] font-medium">

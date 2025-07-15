@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import React from "react";
-import { Formik, Form, Field } from "formik";
+import { Formik, Form, Field, FieldProps } from "formik";
 import { useRouter } from "next/navigation";
 import { loginSchema } from "@/utils/schema/auth";
 import { CustomInput } from "@/components/custom/custom-input";
@@ -43,7 +43,7 @@ export default function Login() {
         {({ errors, touched, isValid, dirty }) => (
           <Form className="space-y-4">
             <Field name="email">
-              {({ field }: any) => (
+              {({ field }: FieldProps) => (
                 <CustomInput
                   {...field}
                   type="email"
@@ -57,7 +57,7 @@ export default function Login() {
             </Field>
 
             <Field name="password">
-              {({ field }: any) => (
+              {({ field }: FieldProps) => (
                 <CustomInput
                   {...field}
                   type="password"

@@ -1,23 +1,19 @@
 import React from "react";
 
 export default function useRemovePointerEvent(isOpen: boolean | undefined) {
-  const handleRemovePointerEvent = () => {
-    const removePointerEventsNone = () => {
-      if (typeof window !== 'undefined') {
-        document.body.style.removeProperty("pointer-events");
+  const removePointerEventsNone = React.useCallback(() => {
+    if (typeof window !== "undefined") {
+      document.body.style.removeProperty("pointer-events");
     }
-    };
+  }, []);
 
+  const handleRemovePointerEvent = React.useCallback(() => {
     removePointerEventsNone();
-
-    if (!isOpen) {
-      setTimeout(removePointerEventsNone, 0);
-    }
-  };
+  }, [removePointerEventsNone]);
 
   React.useEffect(() => {
     handleRemovePointerEvent();
-  }, [isOpen]);
+  }, [isOpen, handleRemovePointerEvent]);
 
   return { handleRemovePointerEvent };
 }

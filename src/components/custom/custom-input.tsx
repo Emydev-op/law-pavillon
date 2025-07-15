@@ -3,12 +3,7 @@
 import React from "react";
 import { forwardRef } from "react";
 import { cn } from "@/lib/utils";
-import {
-  CircleAlert,
-  CircleIcon as ExclamationCircleIcon,
-  EyeIcon,
-  EyeOffIcon,
-} from "lucide-react";
+import { CircleAlert, EyeIcon, EyeOffIcon } from "lucide-react";
 
 export interface CustomInputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -33,7 +28,6 @@ const CustomInput = forwardRef<HTMLInputElement, CustomInputProps>(
       labelClassName,
       errorClassName,
       type = "text",
-      id,
       name,
       passwordToggle = false, // Add default value
       ...props

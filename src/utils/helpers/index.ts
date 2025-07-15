@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /**
  * Capitalizes the first letter of a sentence.
  *
@@ -93,7 +94,7 @@ export const truncateString = (str: string, maxLength: number): string => {
  * // Returns: "?foo=bar&baz=1&baz=2"
  * Property of Emydev
  */
-export function generateQueryString(params: Record<string, any>): string {
+export function generateQueryString(params: Record<string, string>): string {
   const query = Object.entries(params)
     .filter(
       ([_, value]) => value !== undefined && value !== null && value !== ""

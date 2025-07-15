@@ -7,7 +7,6 @@ interface MetricCardProps {
   value: string;
   transactions?: string;
   href?: string;
-  icon?: "buy" | "sell";
   desc?: string;
   showArrow?: boolean;
   loading?: boolean;
@@ -18,7 +17,6 @@ export const MetricCard = ({
   value,
   transactions,
   href,
-  icon,
   desc,
   showArrow,
   loading,

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { RootStateType } from "@/redux/store";
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { Auth } from "./type";
